@@ -1,0 +1,21 @@
+﻿@page
+@model SuperHeroes.UI.Pages.Heroes.CurrentHeroesModel
+@{
+}
+<div class="container text-light" style="text-align: center; color:bisque">
+    <div class="row">
+        @foreach (var hero in SuperHeroes.Application.SuperHeroManager.SuperHeroes)
+        {
+            <div class="col-3 pt-2 mt-3">
+                <img src="@hero.Image" height="200" width="120" style="border: 5px solid #ffd800; " />
+            </div>
+            <div class="col-3 pt-2 mt-2">
+                <h5 class="mt-2">Hero Name:</h5>
+                <h4 style="color:bisque">@hero.Name</h4>
+                <h5>Secret Identity:</h5>
+                <h4 style="color:bisque">@hero.SecretIdentity</h4>
+                <h5 style="color:dimgray">Powers: @string.Join(", ", hero.PowersList).Replace("_", " ")</h5>
+            </div>
+        }
+    </div>
+</div>

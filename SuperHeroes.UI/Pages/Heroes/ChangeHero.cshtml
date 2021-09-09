@@ -1,0 +1,26 @@
+﻿@page
+@model SuperHeroes.UI.Pages.Heroes.ChangeHeroModel
+@{
+}
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-8 pt-3">
+                <select style="font-size: 20px !important" asp-for="@Model.HeroToChange" id="heroes">
+                    <option value="0" selected>Choose Hero</option>
+                    @foreach (var item in SuperHeroes.Application.SuperHeroManager.SuperHeroes)
+                    {
+                        <option value="@item.Id">@item.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 pt-3">
+                <input class="btn btn-outline-light" type="submit" value="Submit"/>
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SuperHeroes.UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent mb-3 text-light" style="font-size: 20px !important; font-weight:bold">
+            <div class="container text-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="col-4">
+                    <ul class="navbar-nav flex-grow-1 col-4">
+                        <li class="nav-item mr-3">
+                            <a href="/Index">
+                                <img src="~/SuperHeroPics/logo-desktop.png" height="75" width="150" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex col-8">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item mt-2 pr-4">
+                            <a class="nav-link" style="color: #FFD523" asp-area="" asp-page="/Heroes/SignUp">Sign Up</a>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class="nav-link" style="color: #FFD523" asp-area="" asp-page="/Heroes/CurrentHeroes">Headquarters</a>
+                        </li>
+                        <li class="nav-item mt-2 pl-4">
+                            <a class="nav-link" style="color: #FFD523" asp-area="" asp-page="/Heroes/ChangeHero">Change hero</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2021 - Tintin Petersson
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

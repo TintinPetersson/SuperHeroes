@@ -1,0 +1,32 @@
+﻿@page
+@model SuperHeroes.UI.Pages.Heroes.SignUpModel
+@{
+}
+
+<form class="justify-content-center align-items-center" method="post">
+    <div class="container" style="text-align:center;">
+        <div class="row">
+            <div class="col pt-3">
+                <input type="text" style="font-size: 20px !important; font-style: oblique" placeholder="Superhero name..." asp-for="@Model.SuperHero.Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <input type="text" style="font-size: 20px !important; font-style: oblique" placeholder="Secret identity..." asp-for="@Model.SuperHero.SecretIdentity" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <select style="font-size: 20px !important; height: 200px; width:210px" asp-for="@Model.SuperHero.PowersList" asp-items="@Model.SuperPowers">
+                    <option selected="selected" value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <input class="btn btn-outline-light" type="submit" value="Submit" />
+            </div>
+        </div>
+    </div>
+</form>
+
