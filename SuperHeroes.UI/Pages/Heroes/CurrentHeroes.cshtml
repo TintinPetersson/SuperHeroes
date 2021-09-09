@@ -15,6 +15,12 @@
                 <h5>Secret Identity:</h5>
                 <h4 style="color:bisque">@hero.SecretIdentity</h4>
                 <h5 style="color:dimgray">Powers: @string.Join(", ", hero.PowersList).Replace("_", " ")</h5>
+
+                <div class="row">
+                    <div class="col pt-3">
+                        <a class="btn btn-outline-light" type="submit" asp-page="/Heroes/ChangeIt" asp-route-id="@hero.Id">Edit</a>
+                    </div>
+                </div>
             </div>
         }
     </div>

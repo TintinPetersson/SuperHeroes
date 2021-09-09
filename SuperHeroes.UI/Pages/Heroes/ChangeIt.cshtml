@@ -2,3 +2,57 @@
 @model SuperHeroes.UI.Pages.Heroes.ChangeItModel
 @{
 }
+
+<div class="container text-light" style="text-align:center">
+    <div class="row align-content-center">
+        <div class="col-6">
+            <h2>Hero Name:</h2>
+            <h1 style="color:bisque">@Model.hero.Name</h1>
+            <h2>Secret Identity:</h2>
+            <h1 style="color:bisque">@Model.hero.SecretIdentity</h1>
+            <h3>Powers:</h3>
+            @foreach (var item in Model.hero.PowersList)
+            {
+                <h2 style="color:dimgray">@item</h2>
+            }
+        </div>
+        <div class="col-6">
+            <img src="@Model.hero.Image" height="350" width="220" style="border: 5px solid #ffd800;"/>
+        </div>
+    </div>
+</div>
+
+
+
+<form class="justify-content-center align-items-center" method="post">
+    <div class="container" style="text-align:center;">
+        <div class="row">
+            <div class="col pt-3">
+
+                <input hidden type="text" style="font-size: 20px !important; font-style: oblique" placeholder="New secret identity..." asp-for="@Model.hero.Id" />
+                <input hidden type="text" style="font-size: 20px !important; font-style: oblique" placeholder="New secret identity..." asp-for="@Model.hero.Image" />
+
+                <input type="text" style="font-size: 20px !important; font-style: oblique" placeholder="New name..." asp-for="@Model.hero.Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <input type="text" style="font-size: 20px !important; font-style: oblique" placeholder="New secret identity..." asp-for="@Model.hero.SecretIdentity" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <select style="font-size: 20px !important; height: 200px; width:210px" asp-for="@Model.hero.PowersList" asp-items="@Model.SuperPowers">
+                    <option selected="selected" value=""></option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col pt-3">
+                <input class="btn btn-outline-light" type="submit" value="Submit" />
+            </div>
+        </div>
+    </div>
+</form>
+
+

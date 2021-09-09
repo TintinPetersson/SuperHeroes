@@ -34,7 +34,7 @@ namespace SuperHeroes.UI.Pages.Heroes
             IdCounter++;
             SuperHero.Id = IdCounter;
 
-            int random = new Random().Next(1, 8);
+            int random = new Random().Next(1, 12);
 
             SuperHero.Image = "/SuperHeroPics/*.jpg".Replace("*", random.ToString());
 
